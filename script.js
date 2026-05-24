@@ -5,18 +5,30 @@ const nextBtn = document.getElementById("next-btn");
 let currentQuestions = [];
 
 function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
+
+  const copied = [...array];
+
+  for (let i = copied.length - 1; i > 0; i--) {
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [copied[i], copied[j]] = [copied[j], copied[i]];
+  }
+
+  return copied;
 }
 
 function loadQuestions() {
 
   quizArea.innerHTML = "";
 
-  currentQuestions = shuffle([...questions]).slice(0, 5);
+  // 3問ランダム出題
+  currentQuestions = shuffle(questions).slice(0, 3);
 
   currentQuestions.forEach((q, qIndex) => {
 
     const box = document.createElement("div");
+
     box.className = "question-box";
 
     let html = `
@@ -24,10 +36,15 @@ function loadQuestions() {
     `;
 
     q.choices.forEach((choice, cIndex) => {
+
       html += `
         <div class="choice">
           <label>
-            <input type="radio" name="q${qIndex}" value="${cIndex}">
+            <input
+              type="radio"
+              name="q${qIndex}"
+              value="${cIndex}"
+            >
             ${choice.text}
           </label>
         </div>
@@ -51,29 +68,53 @@ function gradeQuiz() {
 
     const q = currentQuestions[qIndex];
 
-    const selected = document.querySelector(`input[name="q${qIndex}"]:checked`);
+    const selected = document.querySelector(
+      `input[name="q${qIndex}"]:checked`
+    );
 
     let resultHTML = "";
 
     if (!selected) {
-      resultHTML += `<p class="wrong">未回答</p>`;
+
+      resultHTML += `
+        <p class="wrong">
+          未回答
+        </p>
+      `;
+
     } else {
 
       const selectedIndex = Number(selected.value);
+
       const selectedChoice = q.choices[selectedIndex];
 
       if (selectedChoice.isCorrect) {
-        resultHTML += `<p class="correct">○ 正解</p>`;
+
+        resultHTML += `
+          <p class="correct">
+            ○ 正解
+          </p>
+        `;
+
       } else {
-        resultHTML += `<p class="wrong">× 不正解</p>`;
+
+        resultHTML += `
+          <p class="wrong">
+            × 不正解
+          </p>
+        `;
       }
     }
 
-    resultHTML += `<div class="explanation">`;
+    resultHTML += `
+      <div class="explanation">
+    `;
 
     q.choices.forEach(choice => {
 
-      const mark = choice.isCorrect ? "【正解】" : "【不正解】";
+      const mark = choice.isCorrect
+        ? "【正解】"
+        : "【不正解】";
 
       resultHTML += `
         <p>
@@ -83,7 +124,9 @@ function gradeQuiz() {
       `;
     });
 
-    resultHTML += `</div>`;
+    resultHTML += `
+      </div>
+    `;
 
     box.innerHTML += resultHTML;
   });
@@ -94,6 +137,9 @@ function gradeQuiz() {
 
 gradeBtn.addEventListener("click", gradeQuiz);
 
-nextBtn.addEventListener("click", loadQuestions);
+nextBtn.addEventListener("click", () => {
+
+  loadQuestions();
+});
 
 loadQuestions();
