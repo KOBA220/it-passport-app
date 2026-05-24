@@ -258,6 +258,396 @@ const questions = [
         explanation: "OSです。"
       }
     ]
-  }
+  },
+  
+  {
+  question: "LANで機器を接続する際によく使用される機器は？",
+  choices: [
+    {
+      text: "スイッチ",
+      isCorrect: true,
+      explanation: "LAN内接続にはスイッチがよく使用されます。"
+    },
+    {
+      text: "プリンタ",
+      isCorrect: false,
+      explanation: "接続機器ですが中継機器ではありません。"
+    },
+    {
+      text: "スキャナ",
+      isCorrect: false,
+      explanation: "入力装置です。"
+    },
+    {
+      text: "ディスプレイ",
+      isCorrect: false,
+      explanation: "表示装置です。"
+    }
+  ]
+},
+
+{
+  question: "メール送信に使われるプロトコルは？",
+  choices: [
+    {
+      text: "SMTP",
+      isCorrect: true,
+      explanation: "SMTPはメール送信で使用されます。"
+    },
+    {
+      text: "HTTP",
+      isCorrect: false,
+      explanation: "HTTPはWeb通信です。"
+    },
+    {
+      text: "FTP",
+      isCorrect: false,
+      explanation: "FTPはファイル転送です。"
+    },
+    {
+      text: "DNS",
+      isCorrect: false,
+      explanation: "DNSは名前解決です。"
+    }
+  ]
+},
+
+{
+  question: "IPアドレスを自動割当する仕組みは？",
+  choices: [
+    {
+      text: "DNS",
+      isCorrect: false,
+      explanation: "DNSは名前解決です。"
+    },
+    {
+      text: "DHCP",
+      isCorrect: true,
+      explanation: "DHCPはIPアドレスを自動割当します。"
+    },
+    {
+      text: "ARP",
+      isCorrect: false,
+      explanation: "ARPはMACアドレス解決です。"
+    },
+    {
+      text: "NTP",
+      isCorrect: false,
+      explanation: "NTPは時刻同期です。"
+    }
+  ]
+},
+
+{
+  question: "データを暗号化する目的は？",
+  choices: [
+    {
+      text: "通信速度向上",
+      isCorrect: false,
+      explanation: "速度向上ではありません。"
+    },
+    {
+      text: "機密性確保",
+      isCorrect: true,
+      explanation: "情報漏洩防止が目的です。"
+    },
+    {
+      text: "容量削減",
+      isCorrect: false,
+      explanation: "圧縮ではありません。"
+    },
+    {
+      text: "印刷高速化",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    }
+  ]
+},
+
+{
+  question: "DBMSの役割は？",
+  choices: [
+    {
+      text: "データ管理",
+      isCorrect: true,
+      explanation: "DBMSはデータベース管理を行います。"
+    },
+    {
+      text: "画像編集",
+      isCorrect: false,
+      explanation: "画像編集ソフトではありません。"
+    },
+    {
+      text: "動画配信",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "電源管理",
+      isCorrect: false,
+      explanation: "OSやBIOSの役割です。"
+    }
+  ]
+},
+
+{
+  question: "1Byteは何bit？",
+  choices: [
+    {
+      text: "4bit",
+      isCorrect: false,
+      explanation: "4bitではありません。"
+    },
+    {
+      text: "8bit",
+      isCorrect: true,
+      explanation: "1Byte = 8bitです。"
+    },
+    {
+      text: "16bit",
+      isCorrect: false,
+      explanation: "16bitではありません。"
+    },
+    {
+      text: "32bit",
+      isCorrect: false,
+      explanation: "32bitではありません。"
+    }
+  ]
+},
+
+{
+  question: "ブラウザに該当するものは？",
+  choices: [
+    {
+      text: "Excel",
+      isCorrect: false,
+      explanation: "表計算ソフトです。"
+    },
+    {
+      text: "Chrome",
+      isCorrect: true,
+      explanation: "ChromeはWebブラウザです。"
+    },
+    {
+      text: "PowerPoint",
+      isCorrect: false,
+      explanation: "プレゼンソフトです。"
+    },
+    {
+      text: "Word",
+      isCorrect: false,
+      explanation: "文書作成ソフトです。"
+    }
+  ]
+},
+
+{
+  question: "プログラムの不具合を何という？",
+  choices: [
+    {
+      text: "バグ",
+      isCorrect: true,
+      explanation: "不具合はバグと呼ばれます。"
+    },
+    {
+      text: "パッチ",
+      isCorrect: false,
+      explanation: "修正プログラムです。"
+    },
+    {
+      text: "ドライバ",
+      isCorrect: false,
+      explanation: "制御ソフトです。"
+    },
+    {
+      text: "ライセンス",
+      isCorrect: false,
+      explanation: "利用許諾です。"
+    }
+  ]
+},
+
+{
+  question: "ファイアウォールの役割は？",
+  choices: [
+    {
+      text: "印刷管理",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "不正通信遮断",
+      isCorrect: true,
+      explanation: "外部からの不正アクセスを防ぎます。"
+    },
+    {
+      text: "動画編集",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "電源供給",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    }
+  ]
+},
+
+{
+  question: "クラウドの特徴として適切なものは？",
+  choices: [
+    {
+      text: "インターネット経由で利用",
+      isCorrect: true,
+      explanation: "クラウドはネット経由で利用します。"
+    },
+    {
+      text: "紙で管理",
+      isCorrect: false,
+      explanation: "クラウドではありません。"
+    },
+    {
+      text: "LAN専用",
+      isCorrect: false,
+      explanation: "LAN限定ではありません。"
+    },
+    {
+      text: "オフライン専用",
+      isCorrect: false,
+      explanation: "通常オンライン利用です。"
+    }
+  ]
+},
+
+{
+  question: "URLの説明として正しいものは？",
+  choices: [
+    {
+      text: "Webページの場所",
+      isCorrect: true,
+      explanation: "URLはWeb上の位置情報です。"
+    },
+    {
+      text: "CPUの型番",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "暗号化方式",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "画像形式",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    }
+  ]
+},
+
+{
+  question: "IoTの説明として正しいものは？",
+  choices: [
+    {
+      text: "モノをネット接続する",
+      isCorrect: true,
+      explanation: "IoTはモノのインターネットです。"
+    },
+    {
+      text: "動画編集技術",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "暗号化技術",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "印刷技術",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    }
+  ]
+},
+
+{
+  question: "AIの正式名称は？",
+  choices: [
+    {
+      text: "Artificial Intelligence",
+      isCorrect: true,
+      explanation: "AIは人工知能です。"
+    },
+    {
+      text: "Automatic Internet",
+      isCorrect: false,
+      explanation: "違います。"
+    },
+    {
+      text: "Advanced Input",
+      isCorrect: false,
+      explanation: "違います。"
+    },
+    {
+      text: "Applied Interface",
+      isCorrect: false,
+      explanation: "違います。"
+    }
+  ]
+},
+
+{
+  question: "USBメモリの役割は？",
+  choices: [
+    {
+      text: "データ保存",
+      isCorrect: true,
+      explanation: "USBメモリは記憶装置です。"
+    },
+    {
+      text: "通信暗号化",
+      isCorrect: false,
+      explanation: "主目的ではありません。"
+    },
+    {
+      text: "CPU制御",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    },
+    {
+      text: "画面表示",
+      isCorrect: false,
+      explanation: "関係ありません。"
+    }
+  ]
+},
+
+{
+  question: "Webページを作成する言語は？",
+  choices: [
+    {
+      text: "HTML",
+      isCorrect: true,
+      explanation: "HTMLはWebページ作成言語です。"
+    },
+    {
+      text: "SQL",
+      isCorrect: false,
+      explanation: "SQLはDB言語です。"
+    },
+    {
+      text: "SMTP",
+      isCorrect: false,
+      explanation: "メール送信プロトコルです。"
+    },
+    {
+      text: "FTP",
+      isCorrect: false,
+      explanation: "ファイル転送です。"
+    }
+  ]
+}
 
 ];
