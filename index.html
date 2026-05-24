@@ -10,6 +10,26 @@
   <div class="container">
     <h1>ITパスポート問題アプリ</h1>
 
+    <div class="tabs">
+
+      <button onclick="changeType('単語')">
+        単語
+      </button>
+
+      <button onclick="changeType('最適問題')">
+        最適問題
+      </button>
+
+      <button onclick="changeType('正誤問題')">
+        正誤問題
+      </button>
+
+      <button onclick="changeType('過去問')">
+        過去問
+      </button>
+
+    </div>
+
     <div id="quiz-area"></div>
 
     <button id="grade-btn">採点する</button>

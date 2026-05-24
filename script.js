@@ -3,6 +3,7 @@ const gradeBtn = document.getElementById("grade-btn");
 const nextBtn = document.getElementById("next-btn");
 
 let currentQuestions = [];
+let currentType = "単語";
 
 function shuffle(array) {
 
@@ -18,12 +19,24 @@ function shuffle(array) {
   return copied;
 }
 
+function changeType(type) {
+
+  currentType = type;
+
+  loadQuestions();
+}
+
 function loadQuestions() {
 
   quizArea.innerHTML = "";
 
+  // タイプ別に絞り込み
+  const filtered = questions.filter(q => {
+    return q.type === currentType;
+  });
+
   // 3問ランダム出題
-  currentQuestions = shuffle(questions).slice(0, 3);
+  currentQuestions = shuffle(filtered).slice(0, 3);
 
   currentQuestions.forEach((q, qIndex) => {
 
@@ -32,7 +45,11 @@ function loadQuestions() {
     box.className = "question-box";
 
     let html = `
-      <h3>Q${qIndex + 1}. ${q.question}</h3>
+      <h3>
+        Q${qIndex + 1}.
+        ${q.year ? "[" + q.year + "] " : ""}
+        ${q.question}
+      </h3>
     `;
 
     q.choices.forEach((choice, cIndex) => {

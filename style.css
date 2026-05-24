@@ -1,48 +1,143 @@
 body {
-    font-family: sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .question-box {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .choice {
-    margin: 8px 0;
-  }
-  
-  .correct {
-    color: green;
-    font-weight: bold;
-  }
-  
-  .wrong {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .explanation {
-    background: #f0f8ff;
+  font-family: sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tabs button {
+  background: #e3ecff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.tabs button:hover {
+  background: #cddcff;
+}
+
+.question-box {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.question-box h3 {
+  margin-top: 0;
+  color: #222;
+}
+
+.choice {
+  margin: 12px 0;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.choice:hover {
+  background: #f0f6ff;
+}
+
+.choice label {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+.correct {
+  color: #0a8a2a;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.wrong {
+  color: #d62828;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.explanation {
+  background: #eef6ff;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #4a90e2;
+}
+
+.explanation p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+button {
+  border: none;
+  background: #4a90e2;
+  color: white;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3578c9;
+}
+
+#grade-btn,
+#next-btn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+
+  body {
     padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
   }
-  
+
+  .container {
+    padding: 15px;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+
   button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-right: 10px;
-    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
   }
+}
